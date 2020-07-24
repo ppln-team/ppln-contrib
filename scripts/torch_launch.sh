@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-# Script to start PyTorch training in one of two modes to choose from:
-# DataParallel and DistributedDataParallel, - based on the configuration file
+# Script to start PyTorch training in one of the two modes to choose from: DataParallel and DistributedDataParallel
 
 # Example usege:
 # ./train.sh \
-#   --file-path=/project/scripts/train.py \
+#   --file-path=/path/to/file.py \
 #   --cuda-visible-devices=0,1,2 \
 #   --is-distributed=true \
 #   --positional1=any \
