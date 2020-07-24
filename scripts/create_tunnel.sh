@@ -1,32 +1,26 @@
 #!/usr/bin/env bash
-# Helper for forwarding test DB connection
-# on $LOCAL_PG_ADDR:$LOCAL_PG_PORT (localhost:15501 by default)
-# to
-# REMOTE_FWD_ADDR ("138.68.76.50" - test db by default)
-# (open key should be added for user pjfwd on $REMOTE_FWD_ADDR host)
-#
+# Helper for port forwarding
 # based on https://unix.stackexchange.com/questions/100859/ssh-tunnel-without-shell-on-ssh-server
-#set -x
 
-# Example usage:
-# ./port_forwarding.sh \
-#   --name=dl1-docker-forwarding \
+# Usage example:
+# ./create_tunnel.sh \
+#   --name=tunnel-name \
 #   --local-addr=localhost \
 #   --local-port=8991 \
 #   --remote-addr=localhost \
 #   --remote-port=9991 \
-#   --remote-ssh=dl1 \
-#   --ssh-user=n01z3 \
+#   --remote-ssh=ssh-server-name \
+#   --ssh-user=user-name \
 #   --command=start
 #
-# ./port_forwarding.sh \
-#   --n=dl2-docker-forwarding \
+# ./create_tunnel.sh \
+#   --n=tunnel-name \
 #   -la=localhost \
 #   -lp=8992 \
 #   -ra=localhost \
 #   -rp=9992 \
-#   -rs=dl2 \
-#   -su=n01z3 \
+#   -rs=ssh-server-name \
+#   -su=user-name \
 #   -c=stop
 
 
