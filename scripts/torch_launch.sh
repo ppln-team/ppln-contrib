@@ -3,8 +3,8 @@
 # DataParallel and DistributedDataParallel, - based on the configuration file
 
 # Example usege:
-# ./torch_launch.sh \
-#   --file-path=/path/to/file.py \
+# ./train.sh \
+#   --file-path=/project/scripts/train.py \
 #   --cuda-visible-devices=0,1,2 \
 #   --is-distributed=true \
 #   --positional1=any \
@@ -39,7 +39,6 @@ done
 if [ $IS_DISTRIBUTED = true ]; then
     read -ra GPUS <<<"$CUDA_VISIBLE_DEVICES"
     GPU_COUNT="${#GPUS[@]}"
-    POSITIONAL+=("--is-distributed")
 
     OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES \
     python -m torch.distributed.launch \
