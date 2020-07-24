@@ -2,7 +2,7 @@
 # Script to start PyTorch training in one of the two modes to choose from: DataParallel and DistributedDataParallel
 
 # Example usege:
-# ./train.sh \
+# torch_launch.sh \
 #   --file-path=/path/to/file.py \
 #   --cuda-visible-devices=0,1,2 \
 #   --is-distributed=true \
