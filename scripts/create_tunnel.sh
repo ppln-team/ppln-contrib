@@ -3,7 +3,7 @@
 # based on https://unix.stackexchange.com/questions/100859/ssh-tunnel-without-shell-on-ssh-server
 
 # Usage example:
-# ./create_tunnel.sh \
+# create_tunnel.sh \
 #   --name=tunnel-name \
 #   --local-addr=localhost \
 #   --local-port=8991 \
@@ -13,7 +13,7 @@
 #   --ssh-user=user-name \
 #   --command=start
 #
-# ./create_tunnel.sh \
+# create_tunnel.sh \
 #   --n=tunnel-name \
 #   -la=localhost \
 #   -lp=8992 \
