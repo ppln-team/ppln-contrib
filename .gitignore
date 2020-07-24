@@ -323,3 +323,4 @@ dkms.conf
 *.cubin
 *.fatbin
 
+/.idea/
