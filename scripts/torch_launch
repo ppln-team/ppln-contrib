@@ -44,11 +44,11 @@ if [ $IS_DISTRIBUTED = true ]; then
         --nnodes=1 \
         --node_rank=0 \
         --nproc_per_node=$GPU_COUNT \
-        $FILE_PATH ${POSITIONAL[@]}
+        $FILE_PATH --is-distributed=$IS_DISTRIBUTED ${POSITIONAL[@]}
 
 elif [ $IS_DISTRIBUTED = false ]; then
     CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES \
-    python $FILE_PATH ${POSITIONAL[@]}
+    python $FILE_PATH --is-distributed=$IS_DISTRIBUTED ${POSITIONAL[@]}
 
 else
     echo "Invalid option: --is-distributed=$IS_DISTRIBUTED"
