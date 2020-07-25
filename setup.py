@@ -32,7 +32,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/ppln-team/ppln-contrib",
     packages=find_packages(),
-    scripts=["./scripts/torch_launch.sh", "./scripts/create_tunnel.sh"],
+    scripts=["./scripts/torch_launch"],
     extras_require={"testing": ["pytest", "flake8", "black==19.3b0", "isort"]},
     python_requires=">=3.6.0",
 )
