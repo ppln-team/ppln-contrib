@@ -162,8 +162,8 @@ class DDPBaseBuilder(_BaseBuilder):
 
 class BaseBatchProcessor(ABC):
     def __init__(self, builder: _BaseBuilder) -> NoReturn:
-        self._config = builder.config
-        self._builder = builder
+        self.config = builder.config
+        self.builder = builder
 
     @abstractmethod
     def train_step(self, model: nn.Module, batch: Dict[str, torch.Tensor], **kwargs) -> Dict[str, Any]:
@@ -178,8 +178,8 @@ class BaseBatchProcessor(ABC):
         ...
 
     def estimate(self, name: str, inputs: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
-        estimators = self._builder.losses
-        if self._builder.metrics:
-            estimators.update(self._builder.metrics)
+        estimators = self.builder.losses
+        if self.builder.metrics:
+            estimators.update(self.builder.metrics)
 
         return estimators[name](inputs, targets)
